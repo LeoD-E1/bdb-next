@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import ReactDOM from 'react-dom';
 import { Icon } from '../icons';
 
 interface ModalProps {
@@ -23,7 +22,7 @@ const Modal: React.FC<ModalProps> = ({ children, onClose, isOpen }) => {
 
   if (!isOpen) return null;
 
-  return ReactDOM.createPortal(
+  return (
     <div className='fixed inset-0 z-50 flex items-center justify-center bg-black/50'>
       <div
         className='relative mx-4 w-full max-w-lg rounded-lg bg-white p-6 shadow-lg'
@@ -40,8 +39,7 @@ const Modal: React.FC<ModalProps> = ({ children, onClose, isOpen }) => {
 
         {children}
       </div>
-    </div>,
-    document.getElementById('modal-root') as HTMLElement,
+    </div>
   );
 };
 

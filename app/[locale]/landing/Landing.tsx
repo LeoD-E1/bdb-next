@@ -1,20 +1,20 @@
 'use client';
 
+import Modal from '@/app/ui/components/Modal';
 import Navbar from '@/app/ui/components/Navbar';
-import PageLayout from '@/app/ui/components/PageLayout';
 import { Icon } from '@/app/ui/icons';
 import { useTranslations } from 'next-intl';
+import { useState } from 'react';
 
 export const LandingPage = () => {
   const t = useTranslations('HomePage');
 
+  const [isModalOpen, setModalOpen] = useState(false);
+
   return (
-    <PageLayout>
+    <>
       <div className='bg-white'>
         <Navbar />
-
-        {/* <h1>{t('title')}</h1>
-        <Link href='/about'>{t('about')}</Link> */}
 
         <div className='relative isolate px-6 pt-14 lg:px-8'>
           <div className='mx-auto max-w-2xl py-32 sm:py-48 lg:py-56'>
@@ -32,7 +32,7 @@ export const LandingPage = () => {
                     // className="w-full py-2 pl-11 text-gray-700 rounded-md focus:outline-none focus:bg-white"
                     className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-4 ps-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500'
                     placeholder='¿Cuál es tu dirección?'
-                    // onClick={() => setModalOpen(true)}
+                    onClick={() => setModalOpen(true)}
                   />
                   <div className='pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3'>
                     <Icon.MapPin className='text-red-600' />
@@ -43,6 +43,20 @@ export const LandingPage = () => {
           </div>
         </div>
       </div>
-    </PageLayout>
+
+      <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
+        <h2 className='text-xl font-semibold'>Modal Title</h2>
+        <p className='mt-2 text-gray-600'>
+          This is a reusable modal component created with TypeScript and styled
+          using Tailwind CSS.
+        </p>
+        <button
+          className='mt-4 rounded-lg bg-red-500 px-4 py-2 text-white hover:bg-red-600'
+          onClick={() => setModalOpen(false)}
+        >
+          Close
+        </button>
+      </Modal>
+    </>
   );
 };
