@@ -2,8 +2,8 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/src/i18n/routing';
 import { ReactNode } from 'react';
-import BaseLayout from '../ui/components/BaseLayout';
-import '../ui/globals.css';
+import BaseLayout from '../../ui/components/BaseLayout';
+import '../../ui/globals.css';
 
 type Props = {
   children: ReactNode;

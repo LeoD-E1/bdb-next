@@ -1,8 +1,8 @@
 'use client';
 
-import Modal from '@/src/app/ui/components/Modal';
-import Navbar from '@/src/app/ui/components/Navbar';
-import { Icon } from '@/src/app/ui/icons';
+import Modal from '@/src/ui/components/Modal';
+import Navbar from '@/src/ui/components/Navbar';
+import { Icon } from '@/src/ui/icons';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
