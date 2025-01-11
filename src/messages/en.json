@@ -1,7 +1,8 @@
 {
   "HomePage": {
     "title": "Neighborhood restaurants just a click",
-    "description": "Find neighborhood restaurants with a click, with a personalized recommendation system and a user-friendly interface."
+    "description": "Find neighborhood restaurants with a click, with a personalized recommendation system and a user-friendly interface.",
+    "address_question": "What is your address?"
   },
   "LocaleLayout": {
     "title": "Bocado de barrio"

@@ -1,8 +1,8 @@
 'use client';
 
-import Modal from '@/app/ui/components/Modal';
-import Navbar from '@/app/ui/components/Navbar';
-import { Icon } from '@/app/ui/icons';
+import Modal from '@/src/app/ui/components/Modal';
+import Navbar from '@/src/app/ui/components/Navbar';
+import { Icon } from '@/src/app/ui/icons';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
@@ -31,7 +31,7 @@ export const LandingPage = () => {
                     type='search'
                     // className="w-full py-2 pl-11 text-gray-700 rounded-md focus:outline-none focus:bg-white"
                     className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-4 ps-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500'
-                    placeholder='¿Cuál es tu dirección?'
+                    placeholder={t('address_question')}
                     onClick={() => setModalOpen(true)}
                   />
                   <div className='pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3'>

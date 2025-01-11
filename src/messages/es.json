@@ -1,7 +1,8 @@
 {
   "HomePage": {
     "title": "Los restaurantes de tu barrio a un click",
-    "description": "Encontra restaurantes de barrio a un click, con un sistema de recomendaciones personalizados y una interfaz de usuario amigable."
+    "description": "Encontra restaurantes de barrio a un click, con un sistema de recomendaciones personalizados y una interfaz de usuario amigable.",
+    "address_question": "¿Cual es tu dirección?"
   },
   "LocaleLayout": {
     "title": "Bocado de Barrio"
