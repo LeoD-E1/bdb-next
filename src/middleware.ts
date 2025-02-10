@@ -1,34 +1,23 @@
 import createMiddleware from 'next-intl/middleware';
 import { routing } from './i18n/routing';
 import { NextRequest, NextResponse } from 'next/server';
+import handleSubdomain from './middleware/subdomain';
 
-const intlMiddleware = createMiddleware(routing);
+const intlMiddleware = (req: NextRequest) => {
+  createMiddleware(routing);
+  // catch subdomai from headers
+  const subdomain = req.headers.get('x-subdomain');
+  console.log('🚀 ~ intlMiddleware ~ subdomain:', subdomain);
+  if (subdomain) {
+    return NextResponse.rewrite(
+      new URL(`/${subdomain}${req.nextUrl.pathname}`),
+    );
+  }
+  return NextResponse.next();
+};
 
 export default async function middleware(req: NextRequest) {
-  const url = req.nextUrl;
-  const hostname = req.headers.get('host')!;
-  const path = url.pathname;
-
-  let subdomain = hostname.split('.')[0];
-  subdomain = subdomain.replace('localhost:3000', ''); // Local development support
-
-  // Handle main domain or www with base path
-  if ((subdomain === 'www' || subdomain === '') && path === '/') {
-    return NextResponse.rewrite(new URL('/', req.url));
-  }
-
-  // Profile login for the "app" subdomain
-  if (subdomain === 'app' && path === '/login') {
-    return NextResponse.rewrite(new URL('/login', req.url));
-  }
-
-  // Handle subdomains dynamically
-  if (subdomain !== 'app' && subdomain !== '') {
-    req.nextUrl.pathname = `/users/${subdomain}${path === '/' ? '' : path}`;
-  }
-
-  // Apply internationalization middleware
-  return intlMiddleware(req);
+  return handleSubdomain(req) || intlMiddleware(req) || NextResponse.next();
 }
 
 export const config = {

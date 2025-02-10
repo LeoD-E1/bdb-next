@@ -1,0 +1,94 @@
+[
+  {
+    "name": "La Piazza",
+    "webpage": "https://lapiazza.test.com",
+    "phone": "+34912345678",
+    "description": "Auténtica cocina italiana con ingredientes frescos y un ambiente acogedor.",
+    "cuisineType": "italian",
+    "address": "Calle Mayor 10, Madrid, España",
+    "location": {
+      "lat": 40.4168,
+      "lng": -3.7038
+    },
+    "images": [
+      "https://images.test.com/lapiazza1.jpg",
+      "https://images.test.com/lapiazza2.jpg"
+    ],
+    "priceRange": {
+      "min": 15,
+      "max": 50
+    },
+    "policies": {
+      "cancellationPolicy": "24h",
+      "reservationPolicy": {
+        "timeToReceive": "12:00",
+        "timeTolerance": "15m"
+      }
+    },
+    "isSuscriptionActive": true,
+    "reservations": [],
+    "tenant": "lapiazza"
+  },
+  {
+    "name": "Sakura Sushi",
+    "webpage": "https://sakurasushi.test.com",
+    "phone": "+34987654321",
+    "description": "Deliciosos sushi y sashimi preparados por chefs expertos.",
+    "cuisineType": "japanese",
+    "address": "Avenida de Japón 25, Barcelona, España",
+    "location": {
+      "lat": 41.3851,
+      "lng": 2.1734
+    },
+    "images": [
+      "https://images.pexels.com/photos/27928434/pexels-photo-27928434/free-photo-of-acera-bambu-urbano-sushi.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/3296394/pexels-photo-3296394.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/17126515/pexels-photo-17126515/free-photo-of-tataki-de-atun.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/8951248/pexels-photo-8951248.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    ],
+    "priceRange": {
+      "min": 20,
+      "max": 60
+    },
+    "policies": {
+      "cancellationPolicy": "12h",
+      "reservationPolicy": {
+        "timeToReceive": "13:00",
+        "timeTolerance": "10m"
+      }
+    },
+    "isSuscriptionActive": false,
+    "reservations": [],
+    "tenant": "sakurasushi"
+  },
+  {
+    "name": "El Asador",
+    "webpage": "https://elasador.test.com",
+    "phone": "+34911223344",
+    "description": "Carnes a la parrilla con el mejor sabor y calidad.",
+    "cuisineType": "grill",
+    "address": "Calle del Fuego 7, Sevilla, España",
+    "location": {
+      "lat": 37.3886,
+      "lng": -5.9823
+    },
+    "images": [
+      "https://images.test.com/asador1.jpg",
+      "https://images.test.com/asador2.jpg"
+    ],
+    "priceRange": {
+      "min": 25,
+      "max": 70
+    },
+    "policies": {
+      "cancellationPolicy": "48h",
+      "reservationPolicy": {
+        "timeToReceive": "14:00",
+        "timeTolerance": "20m"
+      }
+    },
+    "isSuscriptionActive": true,
+    "reservations": [],
+    "tenant": "elasador"
+  }
+]
