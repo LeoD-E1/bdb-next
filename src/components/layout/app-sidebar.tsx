@@ -35,6 +35,7 @@ export function AppSidebar() {
                 isActive={item.isActive ? item.isActive(pathname) : pathname === item.href}
                 tooltip={{ children: item.label, side: 'right', align: 'center' }}
                 className={cn(
+                  "py-3", // Increased vertical padding for more "span"
                   (item.isActive ? item.isActive(pathname) : pathname === item.href) ? "bg-sidebar-accent text-sidebar-accent-foreground" : "hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
                 )}
               >
