@@ -39,14 +39,14 @@ export default async function SummaryPage() {
         <SummaryStatCard
           title="Ingresos Semanales"
           value={formatCurrency(summaryData.totalRevenueThisWeek)}
-          icon={DollarSign}
+          // icon={DollarSign}
           description="Total generado en los últimos 7 días"
           className="shadow-lg"
         />
         <SummaryStatCard
           title="Pedidos Semanales"
           value={summaryData.totalOrdersThisWeek}
-          icon={ShoppingCart}
+          // icon={ShoppingCart}
           description="Total de pedidos en los últimos 7 días"
           className="shadow-lg"
         />
