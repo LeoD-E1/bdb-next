@@ -21,7 +21,7 @@ export function AppSidebar() {
   return (
     <Sidebar collapsible="icon" variant="sidebar" side="left" className="border-r">
       <SidebarHeader className="border-b">
-        <Link href="/dashboard" className="flex items-center gap-2 p-2">
+        <Link href="/summary" className="flex items-center gap-2 p-2">
            <ChefHat className="h-8 w-8 text-primary group-data-[collapsible=icon]:mx-auto" />
            <span className="font-headline text-xl text-primary group-data-[collapsible=icon]:hidden">Bocado de Barrio</span>
         </Link>
@@ -32,11 +32,11 @@ export function AppSidebar() {
             <SidebarMenuItem key={item.href}>
               <SidebarMenuButton
                 asChild
-                isActive={item.isActive ? item.isActive(pathname) : pathname === item.href}
+                isActive={item.isActive ? item.isActive(pathname) : pathname.startsWith(item.href)}
                 tooltip={{ children: item.label, side: 'right', align: 'center' }}
                 className={cn(
-                  "py-3", // Increased vertical padding for more "span"
-                  (item.isActive ? item.isActive(pathname) : pathname === item.href) ? "bg-sidebar-accent text-sidebar-accent-foreground" : "hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
+                  "py-3", 
+                  (item.isActive ? item.isActive(pathname) : pathname.startsWith(item.href)) ? "bg-sidebar-accent text-sidebar-accent-foreground" : "hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
                 )}
               >
                 <Link href={item.href}>

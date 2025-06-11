@@ -21,7 +21,7 @@ export default function HomePage() {
             Bienvenido al panel de administración de Bocado de Barrio. Gestiona tus pedidos, productos y analiza tus ventas fácilmente.
           </p>
           <Button asChild size="lg" className="font-headline">
-            <Link href="/dashboard">Acceder al Panel</Link>
+            <Link href="/summary">Acceder al Panel</Link>
           </Button>
         </CardContent>
       </Card>
