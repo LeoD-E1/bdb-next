@@ -1,13 +1,12 @@
 'use client';
 
-import type React from 'react';
+import type { FunctionComponent, SVGProps } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-// LucideIcon type is not strictly necessary if we use React.ElementType
 
 interface SummaryStatCardProps {
   title: string;
   value: string | number;
-  icon: React.ElementType; // Changed from LucideIcon to React.ElementType
+  icon: FunctionComponent<SVGProps<SVGSVGElement>>;
   description?: string;
   className?: string;
 }
